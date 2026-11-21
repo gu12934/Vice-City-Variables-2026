@@ -1,0 +1,74 @@
+name: well-risk
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+      # First start only (empty volume): create tables and load pre-computed results,
+      # so the app works without running the pipeline. Regenerate with db/export_seed.sh.
+      - ./api/app/schema.sql:/docker-entrypoint-initdb.d/02-schema.sql:ro
+      - ./db/seed.sql.gz:/docker-entrypoint-initdb.d/03-seed.sql.gz:ro
+    ports:
+      - "5433:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d app"]
+      interval: 5s
+      retries: 20
+
+  mlflow:
+    build: ./mlflow
+    command: >
+      mlflow server --host 0.0.0.0 --port 5000
+      --backend-store-uri postgresql://app:app@postgres:5432/mlflow
+      --artifacts-destination /mlartifacts --serve-artifacts
+    volumes:
+      - mlartifacts:/mlartifacts
+    ports:
+      - "5000:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 5s
+      retries: 30
+
+  api:
+    build: ./api
+    environment:
+      DATABASE_URL: postgresql+psycopg://app:app@postgres:5432/app
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+      MLFLOW_PUBLIC_URL: http://localhost:5000
+      DATA_DIR: /data
+      UPLOAD_DIR: /uploads
+      PRICE_CAD_PER_BBL: "60"
+    volumes:
+      # Competition data is never baked into an image. Either mount it here (an empty folder is created
+      # if it's missing), or upload the three parquet files in the app, which keeps them in the `uploads` volume.
+      - "../data/Competition Dataset:/data:ro"
+      - uploads:/uploads
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mlflow:
+        condition: service_healthy
+
+  web:
+    build: ./web
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
+  mlartifacts:
+  uploads:
