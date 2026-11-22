@@ -26,7 +26,7 @@ As data consultants working with Strathcona Resources, our objective is to ident
 # ❓ Research Question
 Can survival analysis predict heavy-oil well failures before they occur and identify recurring reliability risks, enabling operators to prioritize wells based on failure probability, expected downtime, and operational impact?
 
-#📌 Project Objectives
+# 📌 Project Objectives
 
 Our solution aims to:
 
@@ -42,7 +42,7 @@ Our solution aims to:
 
 ✅ Reduce downtime and maintenance costs
 
-#🔍 Dataset Overview
+# 🔍 Dataset Overview
 
 Provided by Strathcona Resources through the Chirality Research Datathon.
 
@@ -60,7 +60,7 @@ Thousands of Repair Events
 Active and Failed Well Runs
 Operational and Geographic Attributes
 
-#🧠 Why Survival Analysis?
+# 🧠 Why Survival Analysis?
 
 Traditional machine learning approaches struggle with right-censored data.
 
@@ -78,7 +78,7 @@ Remaining useful life estimates
 Hazard/risk trends
 Explainable maintenance prioritization
 
-#⚙️ Methodology
+# ⚙️ Methodology
 1. Data Engineering
 Failure Proxy
 
@@ -110,7 +110,7 @@ Risk Factor Attribution
 
 were incorporated into the pipeline.
 
-#v📈 Key Findings
+# 📈 Key Findings
 Finding 1: Failures Are Highly Concentrated
 
 A small subset of wells drives a disproportionately large share of future maintenance risk.
@@ -257,7 +257,7 @@ https://stumejournals.com/journals/mtm/2019/2/66.full.pdf
 ✅ Validation and Findings
 ✅ AI Usage Disclosure
 
-#🏆 Datathon Competition
+# 🏆 Datathon Competition
 
 This project was developed for the:
 
@@ -267,6 +267,6 @@ Theme: Operational Optimization Through Industrial Time-Series Analytics
 
 Our goal is to transform raw operational data into actionable intelligence that helps operators move from reactive maintenance toward predictive reliability and data-driven decision making.
 
-⭐ Key Takeaway
+# ⭐ Key Takeaway
 
 Not all wells fail equally. By combining survival analysis, explainable machine learning, and operational domain knowledge, we can identify high-risk assets before failure occurs and prioritize maintenance where it generates the greatest business value.
