@@ -120,7 +120,7 @@ This creates an opportunity for targeted intervention.
 
 Survival curves indicate that wells are most vulnerable immediately following a repair event.
 
-This suggests:
+- This suggests:
 
 Repair quality concerns
 Unresolved root causes
