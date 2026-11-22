@@ -247,6 +247,10 @@ Analysis of Workover Causes for Wells with Installed Downhole Sucker-Rod Pumps
 
 https://stumejournals.com/journals/mtm/2019/2/66.full.pdf
 
+# 🎥 AI Disclosure
+
+AI assistance, including Claude + Gemini, contributed to notebook edits and debugging, financial-source research, economic recalculations. Assistance in beautifying README.
+
 🎥 Deliverables
 ✅ Public GitHub Repository
 ✅ Source Code
