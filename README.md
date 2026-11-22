@@ -4,12 +4,12 @@ Chirality x Canary Labs x DSMLC Datathon 2026
 
 Transforming five years of oilfield time-series data into actionable operational intelligence for reliability optimization, predictive maintenance, and risk-based decision making.
 
-Team Members
+Team Members - Vice City Variables Team
 - Gurm
 - Tom
 - Toheeb
 - KTGster
-Vice City Variables Team
+
 
 # 🎯 Problem Statement
 
@@ -116,7 +116,7 @@ A small subset of wells drives a disproportionately large share of future mainte
 
 This creates an opportunity for targeted intervention.
 
-Finding 2: Highest Risk Occurs After Repairs
+- Finding 2: Highest Risk Occurs After Repairs
 
 Survival curves indicate that wells are most vulnerable immediately following a repair event.
 
