@@ -5,60 +5,60 @@ Chirality x Canary Labs x DSMLC Datathon 2026
 Transforming five years of oilfield time-series data into actionable operational intelligence for reliability optimization, predictive maintenance, and risk-based decision making.
 
 Team Members
-Gurm
-Tom
-Toheeb
-KTGster
+- Gurm
+- Tom
+- Toheeb
+- KTGster
 Vice City Variables Team
 
 # 🎯 Problem Statement
 
 The oil and gas industry generates massive volumes of production, maintenance, and operational data every day. Despite this wealth of information, maintenance activities are often reactive, resulting in:
 
-Unplanned production downtime
-Lost revenue
-Emergency repair costs
-Reduced equipment reliability
-Inefficient allocation of maintenance resources
+- Unplanned production downtime
+- Lost revenue
+- Emergency repair costs
+- Reduced equipment reliability
+- Inefficient allocation of maintenance resources
 
 As data consultants working with Strathcona Resources, our objective is to identify opportunities for operational optimization using five years of production and maintenance data.
 
 # ❓ Research Question
-Can survival analysis predict heavy-oil well failures before they occur and identify recurring reliability risks, enabling operators to prioritize wells based on failure probability, expected downtime, and operational impact?
+- Can survival analysis predict heavy-oil well failures before they occur and identify recurring reliability risks, enabling operators to prioritize wells based on failure probability, expected downtime, and operational impact?
 
 # 📌 Project Objectives
 
 Our solution aims to:
 
-✅ Estimate the probability of future well failures
+- ✅ Estimate the probability of future well failures
 
-✅ Predict time-to-failure after maintenance activities
+- ✅ Predict time-to-failure after maintenance activities
 
-✅ Identify wells exhibiting recurring reliability issues
+- ✅ Identify wells exhibiting recurring reliability issues
 
-✅ Quantify operational factors contributing to failures
+- ✅ Quantify operational factors contributing to failures
 
-✅ Support proactive maintenance planning
+- ✅ Support proactive maintenance planning
 
-✅ Reduce downtime and maintenance costs
+- ✅ Reduce downtime and maintenance costs
 
 # 🔍 Dataset Overview
 
 Provided by Strathcona Resources through the Chirality Research Datathon.
 
 Available Data Sources
-Daily Production Data by Well
-Production Failure Records
-Maintenance Activities
-Equipment Repair History
-Operational Performance Metrics
-Time Horizon
-5 Years of Historical Data
-Data Characteristics
-Daily Time-Series Observations
-Thousands of Repair Events
-Active and Failed Well Runs
-Operational and Geographic Attributes
+- Daily Production Data by Well
+- Production Failure Records
+- Maintenance Activities
+- Equipment Repair History
+- Operational Performance Metrics
+- Time Horizon
+- 5 Years of Historical Data
+- Data Characteristics
+- Daily Time-Series Observations
+- Thousands of Repair Events
+- Active and Failed Well Runs
+- Operational and Geographic Attributes
 
 # 🧠 Why Survival Analysis?
 
@@ -68,8 +68,8 @@ Many wells were still operating at the end of the observation period.
 
 If active wells are:
 
-Removed → predictions become biased toward failures.
-Treated as failures → healthy wells are misrepresented.
+- Removed → predictions become biased toward failures.
+- Treated as failures → healthy wells are misrepresented.
 
 Survival analysis naturally accounts for censored observations and provides:
 
@@ -79,7 +79,7 @@ Hazard/risk trends
 Explainable maintenance prioritization
 
 # ⚙️ Methodology
-1. Data Engineering
+- 1. Data Engineering
 Failure Proxy
 
 Because formal failure logging only began recently, repair jobs were used as a failure proxy.
@@ -91,7 +91,7 @@ Repair events
 
 making repairs a reasonable reliability indicator.
 
-2. Survival Modelling
+- 2. Survival Modelling
 Statistical Models
 Kaplan-Meier Survival Estimator
 Weibull Survival Analysis
@@ -100,18 +100,17 @@ Machine Learning Models
 Boosted Cox Model
 Survival Forest Approaches
 Risk Ranking Models
-3. Explainability
+
+- 3. Explainability
 
 To ensure recommendations are actionable for engineers:
 
 SHAP Values
 Feature Importance Analysis
-Risk Factor Attribution
-
-were incorporated into the pipeline.
+Risk Factor Attribution were incorporated into the pipeline.
 
 # 📈 Key Findings
-Finding 1: Failures Are Highly Concentrated
+- Finding 1: Failures Are Highly Concentrated
 
 A small subset of wells drives a disproportionately large share of future maintenance risk.
 
@@ -188,6 +187,7 @@ The Boosted Cox model delivered the strongest predictive performance while maint
                 └──────────────────────────┘
 
 # 📂 Repository Structure
+```
 Vice-City-Variables-2026/
 │
 ├── app/
@@ -209,7 +209,7 @@ Vice-City-Variables-2026/
 ├── README.md
 ├── LICENSE
 └── .gitignore
-
+```
 # 🚀 Future Development
 Real-Time Condition Monitoring
 
